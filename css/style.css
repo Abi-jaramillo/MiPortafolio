@@ -1,0 +1,250 @@
+* {
+    background-color: #20262E;
+    color: #E9E8E8;
+    margin : 0;
+    padding: 0;
+    border: 10% solid #20262E;
+    font-size: 2vw;
+}
+*{
+    box-sizing: border-box;
+    
+}
+body{
+    min-height: 100%;
+    
+}
+html{
+    height: 100%;
+}
+.grid-container>*{
+    text-align: center;
+}
+.header{
+    grid-area: header;
+}
+.navbar{
+    grid-area: navbar;
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+}
+/*Telefono*/
+
+@media(min-width:320px){
+    .grid-container{
+    display: grid;
+    gap: 0;
+    grid-template-columns:auto;
+    grid-template-areas: 
+    "header"
+    "navbar"
+    "main"
+    "main"
+    "footer";
+    }
+}
+
+/*Tablet*/
+@media(min-width:760px){
+    .grid-container{
+        grid-template-columns: auto auto;
+        grid-template-areas: 
+        "header header"
+        "navbar navbar"
+        "main main"
+        "footer footer";
+    }
+}
+
+/*Laptop*/
+@media(min-width:900px){
+    .grid-container{
+        grid-template-columns: auto auto auto;
+
+        grid-template-areas: 
+        "header header header"
+        "navbar navbar navbar"
+        "main main main"
+        "footer footer footer"
+        ;
+    }
+}
+h1 {
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 300px;
+}
+
+h2{
+    font-family: "Sarala", sans-serif;
+}
+
+h3 li h6 {
+    font-family: "Figtree", sans-serif;
+}
+
+h3 {
+    background-color: #086972;
+    border-radius: 25px;
+    width: 100%;
+
+}
+h2{
+    background-color: #086972;
+    border-radius: 25px;
+    width: 50%;
+}
+
+li >a{
+    text-decoration:none;
+    list-style: none;
+    color: #E9E8E8;
+    font-size: 3vw;
+    
+}
+.header{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.navbar{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.rounded-circle{
+    width: 50%;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.section{
+    padding: 0%;
+    margin: 5%;
+
+}
+.section>a{
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.sociales a i{
+    color: #17B978;
+    font-size: 400%;
+    margin: 0 15px;
+}
+.sociales a:hover{
+    background: #086972;
+}
+.sociales a:hover i{
+    color: #E9E8E8;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-around;
+    padding: 50px;
+    align-items: center;
+}
+.tierra{
+    width:10%; 
+    border-radius: 50%;
+}
+
+h6{
+    display: flex;
+    justify-content:center;
+}
+
+/*Animación*/
+@keyframes tierra{
+    from{
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+.tierra{
+    animation-name: tierra;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+
+@keyframes girarIzquierda{
+    100%{
+        transform: rotate(10deg);
+    }
+}
+
+.rounded-circle{
+    animation: girarIzquierda 3s linear infinite;
+}
+
+.ConoceMas li{
+    position:relative;
+    font-size: 20px;
+    color:#E9E8E8;
+    font-weight: 500;
+    margin-left: 0%;
+    text-decoration: none;
+    display: flex;
+    justify-content:flex-start;
+}
+.ConoceMas li::before{
+    content:''; /*se usa cuando se usa before y after*/ 
+    position:absolute;
+    bottom: 0;
+    left:0;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, #086972, #17B978); 
+    z-index: 1;
+    transform: scaleX(0); /*Para definir la transformación en SD, parte inferior de su contenedor*/
+    transform-origin: left; /*Empieza desde la izquierda*/
+    transition: .3s;
+}
+
+.ConoceMas li:hover::before{
+    transform: scaleX(1); /*Parte superior de su contenedor*/
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /*width de toda la scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #086972;        /*color del área*/
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #17B978;    /*color del scroll */
+    border-radius: 20px;       
+    border: 3px solid #086972;  /*borde del scroll*/
+  }
